@@ -1,0 +1,163 @@
+.dashboard-container {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f8f9fa;
+  overflow: hidden;
+  padding: 1.5rem;
+}
+
+/* ===== Title ===== */
+.dashboard-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  color: #002e79;
+  font-size: 60%;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+  margin-right: 100%;
+}
+
+
+
+/* ===== Card Container ===== */
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 1150px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.dashboard-subtitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #002e79;
+}
+
+/* ===== Event Grid ===== */
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.8rem;
+  flex: 1;
+}
+
+/* ===== Event Box ===== */
+.event-column {
+  background: white;
+  border-radius: 10px;
+  padding: 0.6rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  font-size: 0.8rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.event-column:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+.event-column h3 {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  color: #002e79;
+}
+
+.event-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* ===== Responsive Breakpoints ===== */
+
+/* 🖥 Tablet */
+@media (max-width: 1024px) {
+  .event-list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+  }
+}
+
+  .dashboard-title {
+  font-size: 35%;
+  margin-left: 20%;
+  }
+
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .dashboard-title {
+    font-size: 1.5rem;
+  }
+
+  .dashboard-card {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .event-list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+}
+
+/* 📲 Small Phones */
+@media (max-width: 480px) {
+  .dashboard-card {
+    padding: 1rem;
+  }
+
+  /* Horizontal scroll view */
+  .event-list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 0.8rem;
+    padding-bottom: 0.5rem;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .event-list::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .event-list::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+  }
+
+  /* Each card acts like a slide */
+  .event-column {
+    min-width: 180px;
+    flex: 0 0 auto;
+  }
+
+  .dashboard-title {
+  font-size: 35%;
+  margin-left: 20%;
+  }
+}

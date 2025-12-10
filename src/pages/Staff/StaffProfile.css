@@ -1,0 +1,190 @@
+/* ===== PROFILE PAGE ===== */
+
+
+.profile-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+/* ===== COVER PHOTO ===== */
+.cover-photo-section {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  height: 300px;
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+  background-color: #dce3f1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.cover-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cover-upload-container {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  z-index: 5;
+}
+
+.upload-cover-btn {
+  background-color: #002e79;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+}
+
+.upload-cover-btn:hover {
+  background-color: #001f52;
+  transform: scale(1.05);
+}
+
+
+/* ===== PROFILE INFO ===== */
+.profile-info {
+  position: relative;
+  top: -80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* ===== PROFILE PICTURE ===== */
+.profile-pic-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid white;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  background-color: white;
+}
+
+.upload-profile-btn {
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  background-color: #002e79;
+  color: white;
+  border-radius: 30%;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+
+}
+
+.upload-profile-btn:hover {
+  background-color: #001f52;
+  transform: scale(1.1);
+}
+
+/* ===== USER DETAILS ===== */
+.user-details {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.user-details h2 {
+  font-size: 1.4rem;
+  color: #002e79;
+  margin: 0;
+}
+
+.user-details span {
+  color: #000;
+  font-weight: 600;
+}
+
+.user-role {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0.3rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+  .cover-photo-section {
+    height: 250px;
+  }
+
+  .profile-pic {
+    width: 130px;
+    height: 130px;
+  }
+
+  .user-details h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cover-photo-section {
+    height: 200px;
+  }
+
+  .upload-cover-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .profile-pic {
+    width: 110px;
+    height: 110px;
+  }
+
+  .upload-profile-btn {
+    padding: 0.4rem;
+    font-size: 0.7rem;
+  }
+
+  .user-details h2 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cover-photo-section {
+    height: 170px;
+  }
+
+  .profile-pic {
+    width: 95px;
+    height: 95px;
+  }
+
+  .upload-cover-btn {
+    bottom: 8px;
+    right: 10px;
+    font-size: 0.7rem;
+  }
+
+  .user-details h2 {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,191 @@
+.profile-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+.cover-photo-section {
+  width: 100%;
+  max-width: 1100px;
+  height: 300px;
+  border-radius: 0 0 16px 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cover-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Perfect centering */
+.profile-info {
+  position: relative;
+  top: -90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.profile-pic-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  padding: 8px;
+  background: white;
+  border: 6px solid #1e40af;
+  box-shadow: 0 10px 30px rgba(30, 64, 175, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-pic-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* EXACT same "Change" button as Staff page */
+.change-btn-staff-style {
+  margin-top: 16px;
+  background: #1e40af;
+  color: white;
+  padding: 10px 28px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.change-btn-staff-style:hover {
+  background: #1e3a8a;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(30, 64, 175, 0.5);
+}
+
+/* Big & Bold Name */
+.student-name {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1e40af;
+  margin: 24px 0 8px 0;
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.edit-pencil {
+  margin-left: 12px;
+  font-size: 1.1rem;
+  color: #60a5fa;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-weight: normal;
+}
+
+.student-name:hover .edit-pencil {
+  opacity: 1;
+}
+
+/* Big & Clear User ID */
+.user-id-big {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin: 8px 0 16px 0;
+  letter-spacing: 2px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.user-role {
+  color: #64748b;
+  font-size: 1.1rem;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* Edit Mode - Clean & Blue */
+.name-edit-mode {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.name-input {
+  padding: 18px 28px;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #1e40af;
+  border: 3px solid #3b82f6;
+  border-radius: 16px;
+  width: 420px;
+  max-width: 90%;
+  text-align: center;
+  background: white;
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.15);
+  margin-bottom: 20px;
+}
+
+.name-input:focus {
+  outline: none;
+  border-color: #1e40af;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.25);
+}
+
+.name-actions button {
+  padding: 12px 32px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  min-width: 120px;
+}
+
+.save-btn {
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  color: white;
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.save-btn:hover {
+  transform: translateY(-2px);
+}
+
+.cancel-btn {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-circle { width: 150px; height: 150px; }
+  .student-name { font-size: 2.2rem; }
+  .user-id-big { font-size: 1.4rem; }
+  .name-input { font-size: 2rem; width: 90%; }
+}
+
+@media (max-width: 480px) {
+  .profile-circle { width: 130px; height: 130px; }
+  .student-name { font-size: 1.9rem; }
+  .user-id-big { font-size: 1.2rem; }
+}

@@ -1,0 +1,85 @@
+/* Hero Section Container */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  background: url('../../public/BSIT.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+/* Inner Wrapper */
+.hero-content {
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+/* Title Text */
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+}
+
+/* Subtitle Text */
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: #f1f1f1;
+  margin-bottom: 2rem;
+}
+
+/* 🔹 Small but Responsive Button */
+.hero-button {
+  background-color: #003580;
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 0;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 0.9rem;
+
+  /* 🧠 Responsive width like Tailwind’s w-32 sm:w-40 md:w-48 */
+  width: 8rem; /* base: ~128px */
+}
+
+/* Hover effect */
+.hero-button:hover {
+  background-color: #00225a;
+  transform: scale(1.05);
+}
+
+/* ✅ Responsive width adjustments */
+@media (min-width: 640px) {
+  .hero-button {
+    width: 10rem; /* sm:w-40 */
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-button {
+    width: 11rem; /* md:w-44 */
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-button {
+    width: 12rem; /* lg:w-48 */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-button {
+    width: 7rem; /* smaller for mobile */
+    font-size: 0.8rem;
+    padding: 0.5rem 0;
+  }
+}

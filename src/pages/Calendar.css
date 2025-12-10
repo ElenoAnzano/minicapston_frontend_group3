@@ -1,0 +1,207 @@
+.calendar-page {
+  flex: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #f8f9fa;
+  overflow: hidden;
+  padding: 1.5rem;
+}
+
+/* Title Header */
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  color: #002e79;
+  font-weight: bold;
+  font-size: 2rem;
+  width: 100%;
+  max-width: 1150px;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+/* Calendar Container (stable size like Dashboard) */
+.calendar-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1150px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* Month & Year Dropdowns */
+.month-year-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.month-year-selector select {
+  width: 220px;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 2px solid #002e79;
+  background-color: #f8f9fa;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #002e79;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.month-year-selector select:hover {
+  background-color: #e9f1ff;
+}
+
+.month-year-selector select:focus {
+  outline: none;
+  border-color: #0041b3;
+  box-shadow: 0 0 5px rgba(0, 65, 179, 0.4);
+}
+
+/* Month Title */
+.month-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: #000;
+}
+
+/* Weekdays Row */
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+  color: #002e79;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Calendar Grid */
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.6rem;
+  justify-items: center;
+}
+
+.day {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem 0.8rem;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+  transition: all 0.2s ease;
+}
+
+.day:hover {
+  background-color: #e9f1ff;
+}
+
+.day.sunday {
+  color: red;
+}
+
+.day.saturday {
+  color: blue;
+}
+
+.day.empty {
+  background: transparent;
+  border: none;
+}
+
+/* === Responsive Fixes === */
+@media (max-width: 1024px) {
+  .calendar-card {
+    padding: 1.5rem;
+    width: 95%;
+  }
+
+  .month-year-selector select {
+    width: 180px;
+    font-size: 1rem;
+  }
+
+  .day {
+    font-size: 0.95rem;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .calendar-card {
+    width: 100%;
+    padding: 1.2rem;
+  }
+
+  .calendar-header {
+    font-size: 1.8rem;
+  }
+
+  .month-year-selector select {
+    width: 160px;
+  }
+
+  .day {
+    font-size: 10px;
+    padding: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar-card {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .month-year-selector {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .month-year-selector select {
+    width: 100%;
+  }
+
+  .day {
+    font-size: 10px;
+    padding: 1px;
+  }
+
+.weekdays {
+    font-size: 0.6rem;
+    padding: 1px;
+  }
+}
+
+/* ✅ Show full weekday names by default */
+.weekday::after {
+  content: attr(data-full);
+}
+
+/* ✅ When screen is small, show short names instead */
+@media (max-width: 480px) {
+  .weekday::after {
+    content: attr(data-short);
+  }
+}
+

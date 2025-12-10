@@ -1,0 +1,125 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main container */
+.login-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #002e79, #ffffff);
+  font-family: "Poppins", sans-serif;
+}
+
+/* Inner box (blur container) */
+.login-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 360px;
+  padding: 40px 30px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Logo */
+.logo {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 25px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Input fields */
+.login-content input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(226, 226, 226, 0.8);
+  color: #000; /* typed text color black */
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.login-content input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #013275, #1e72f0);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #013275, #1e72f0);
+}
+
+/* Signup text */
+.signup-text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: white;
+}
+
+.signup-text .signup-link {
+  color: #002f70;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-text .signup-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .login-content {
+    max-width: 320px;
+    padding: 30px 20px;
+  }
+
+  .logo {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-content {
+    max-width: 280px;
+    padding: 25px 15px;
+  }
+
+  .logo {
+    width: 65px;
+    height: 65px;
+  }
+
+  input,
+  button {
+    font-size: 13px;
+  }
+}
