@@ -25,7 +25,7 @@ const StudentConcerns = () => {
   useEffect(() => {
     if (!userId) return;
 
-    const socket = io("http://localhost:5000", {
+    const socket = io(`${import.meta.env.VITE_API_URL}`, {
       query: { userId },
       transports: ["websocket"],
       forceNew: true,

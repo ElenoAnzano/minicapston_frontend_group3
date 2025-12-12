@@ -16,7 +16,7 @@ const StaffProfile = () => {
     setUserID(id);
 
     // Always fetch fresh from NeonDB first
-    fetch(`http://localhost:5000/api/profile/${id}`)
+    fetch(`${import.meta.env.VITE_API_URL}/profile/${id}`)
       .then(res => res.ok ? res.json() : Promise.reject("Offline"))
       .then(data => {
         const name = data.username?.trim() || id;
@@ -57,7 +57,7 @@ const StaffProfile = () => {
       setProfilePhoto(base64);
       localStorage.setItem(`staff_profile_${userID}`, base64);
 
-      fetch("http://localhost:5000/api/profile/update-photo", {
+      fetch(`${import.meta.env.VITE_API_URL}/profile/update-photo`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ idNumber: userID, imageBase64: base64 }),
@@ -85,7 +85,7 @@ const StaffProfile = () => {
     localStorage.setItem(`staff_name_${userID}`, name);
     setIsEditingName(false);
 
-    fetch("http://localhost:5000/api/profile/update-name", {
+    fetch(`${import.meta.env.VITE_API_URL}/profile/update-name`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ idNumber: userID, username: name }),

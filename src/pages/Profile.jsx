@@ -14,7 +14,7 @@ const StudentProfile = () => {
     if (!id) return;
     setUserID(id);
 
-    fetch(`http://localhost:5000/api/profile/${id}`)
+    fetch(`${import.meta.env.VITE_API_URL}/profile/${id}`)
       .then(res => res.ok ? res.json() : Promise.reject())
       .then(data => {
         const name = data.username?.trim() || id;
@@ -41,7 +41,7 @@ const StudentProfile = () => {
       const base64 = reader.result;
       setProfilePhoto(base64);
       localStorage.setItem(`student_profile_${userID}`, base64);
-      fetch("http://localhost:5000/api/profile/update-photo", {
+      fetch(`${import.meta.env.VITE_API_URL}/update-photo`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ idNumber: userID, imageBase64: base64 }),
@@ -56,7 +56,7 @@ const StudentProfile = () => {
     setFullName(name);
     localStorage.setItem(`student_name_${userID}`, name);
     setIsEditingName(false);
-    fetch("http://localhost:5000/api/profile/update-name", {
+    fetch(`${import.meta.env.VITE_API_URL}/profile/update-name`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ idNumber: userID, username: name }),
